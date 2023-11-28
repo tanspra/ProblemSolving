@@ -1,4 +1,4 @@
-package org.dsa;
+package org.dsa.array;
 
 public class LinearSearch {
     public static void main(String[] args) {
