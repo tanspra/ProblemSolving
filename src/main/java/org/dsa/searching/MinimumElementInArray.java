@@ -1,4 +1,4 @@
-package org.dsa.array;
+package org.dsa.searching;
 
 public class MinimumElementInArray {
     public static void main(String[] args) {
