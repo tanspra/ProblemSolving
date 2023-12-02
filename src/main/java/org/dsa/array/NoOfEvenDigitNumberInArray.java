@@ -4,7 +4,8 @@ public class NoOfEvenDigitNumberInArray {
     public static void main(String[] args) {
         int[] arr = new int[]{-12, 2314, 4556, 789};
         // System.out.println(noOfEvenDigitElement(arr));
-        System.out.println(noOfDigit(0));
+        //System.out.println(noOfDigit(0));
+        System.out.println(121);
     }
 
     private static int noOfEvenDigitElement(int[] arr) {
