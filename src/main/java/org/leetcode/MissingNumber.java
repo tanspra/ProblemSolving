@@ -3,9 +3,9 @@ package org.leetcode;
 /*268 : https://leetcode.com/problems/missing-number/
  *
  * */
-class MissingNo {
+class MissingNumber {
     public static void main(String[] args) {
-        System.out.println(new MissingNo().missingNumber(new int[]{3, 0, 1}));
+        System.out.println(new MissingNumber().missingNumber(new int[]{3, 0, 1}));
     }
 
     public int missingNumber(int[] nums) {
