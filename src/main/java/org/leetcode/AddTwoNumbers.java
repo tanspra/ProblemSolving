@@ -47,40 +47,71 @@ class ListNode {
 }
 
 public class AddTwoNumbers {
-    /*public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode resultListNode = new ListNode();
-        if (length(l1)>=length(l2)){
-            resultListNode=add(l1,l2);
-        }else{
-            resultListNode=add(l2,l1);
-        }
-        return resultListNode;
+    public static void main(String[] args) {
+//        ListNode l1 = new ListNode(2);
+//        l1.next = new ListNode(4);
+//        l1.next.next = new ListNode(3);
+//        ListNode l2 = new ListNode(5);
+//        l2.next = new ListNode(6);
+//        l2.next.next = new ListNode(4);
+//        display(l1);
+//        display(l2);
+//        display(new AddTwoNumbers().addTwoNumbers(l1, l2));
+
+        ListNode l1 = new ListNode(9);
+        ListNode l2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
+        display(new AddTwoNumbers().addTwoNumbers(l1, l2));
     }
 
-    private int length(ListNode listNode) {
-        int length = 0;
-        while (listNode.next != null) length++;
-        return length;
+    private static void display(ListNode listNode) {
+        if (listNode == null) {
+            return;
+        }
+        System.out.print(listNode.val + " ");
+        display(listNode.next);
+        System.out.println();
     }
 
-    private ListNode add(ListNode l1, ListNode l2) {
-        ListNode addListNode = new ListNode();
-        ListNode head = addListNode;
-        while (l1.next != null) {
-            if (length(l1) > length(l2)) {
-                addListNode.val = l1.val;
-
-            } else {
-                addListNode.val = l1.val +l2.val;
-            }
-            addListNode.next = new ListNode();
-            addListNode = addListNode.next;
-
-        }
-        return head;
-    }*/
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+    /* This commented code is approached in correct manner but the limit if int and long size is creating issue
+
+       int  counter1 = 0, counter2 = 0;
+        long num1 = 0, num2 = 0;
+        //calculating l1 number
+        do {
+            num1 += ((long) Math.pow(10, counter1) * l1.val);
+            l1 = l1.next;
+            counter1++;
+        } while (l1 != null);
+
+        //calculating l2 number
+        do {
+            num2 += ((long) Math.pow(10, counter2) * l2.val);
+            l2 = l2.next;
+            counter2++;
+        } while (l2!= null);
+        //calculate sum
+        long sum = num1 + num2;
+
+        //add in ListNode
+        ListNode resultNode = new ListNode();
+        ListNode dummyHead = resultNode;
+        while (sum != 0){
+            dummyHead.val = (int)sum % 10;
+            sum /= 10;
+            if(sum!=0) {
+                dummyHead.next = new ListNode();
+                dummyHead = dummyHead.next;
+            }
+
+        }
+
+        return resultNode;
+   */
+
+
         ListNode dummyHead = new ListNode(0);
         ListNode tail = dummyHead;
         int carry = 0;
