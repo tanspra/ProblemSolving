@@ -47,7 +47,7 @@ public class AddTwoNumbers {
 
         ListNode l1 = new ListNode(9);
         ListNode l2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
-        display(new AddTwoNumbers().addTwoNumbers(l1, l2));
+        display(new AddTwoNumbers().addTwoNumbersUsingRecursion(l1, l2));
     }
 
     private static void display(ListNode listNode) {
@@ -59,12 +59,36 @@ public class AddTwoNumbers {
         System.out.println();
     }
 
+    public ListNode addTwoNumbersUsingRecursion(ListNode l1, ListNode l2) {
+        return addTwoNode(l1, l2, 0);
+    }
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNode(ListNode l1, ListNode l2, int carry) {
+        if (l1 == null && l2 == null && carry == 0) {
+            return null;
+        }
 
-    /* This commented code is approached in correct manner but the limit if int and long size is creating issue
+        int val1 = (l1 != null) ? l1.val : 0;
+        int val2 = (l2 != null) ? l2.val : 0;
+        int sum = val1 + val2 + carry;
 
-       int  counter1 = 0, counter2 = 0;
+        ListNode resultNode = new ListNode(sum % 10);
+        carry = sum / 10;
+
+        ListNode next1 = (l1 != null) ? l1.next : null;
+        ListNode next2 = (l2 != null) ? l2.next : null;
+
+        resultNode.next = addTwoNode(next1, next2, carry);
+
+        return resultNode;
+    }
+
+    public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
+
+//     This commented code is approached in correct manner but the limit if int
+//     and long size is creating issue
+
+        int counter1 = 0, counter2 = 0;
         long num1 = 0, num2 = 0;
         //calculating l1 number
         do {
@@ -78,17 +102,17 @@ public class AddTwoNumbers {
             num2 += ((long) Math.pow(10, counter2) * l2.val);
             l2 = l2.next;
             counter2++;
-        } while (l2!= null);
+        } while (l2 != null);
         //calculate sum
         long sum = num1 + num2;
 
         //add in ListNode
         ListNode resultNode = new ListNode();
         ListNode dummyHead = resultNode;
-        while (sum != 0){
-            dummyHead.val = (int)sum % 10;
+        while (sum != 0) {
+            dummyHead.val = (int) sum % 10;
             sum /= 10;
-            if(sum!=0) {
+            if (sum != 0) {
                 dummyHead.next = new ListNode();
                 dummyHead = dummyHead.next;
             }
@@ -96,8 +120,10 @@ public class AddTwoNumbers {
         }
 
         return resultNode;
-   */
 
+    }
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode dummyHead = new ListNode(0);
         ListNode tail = dummyHead;
