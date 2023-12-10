@@ -3,7 +3,8 @@ package org.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*3. Longest Substring Without Repeating Characters
+/* https://leetcode.com/problems/longest-substring-without-repeating-characters/
+3. Longest Substring Without Repeating Characters
 Attempted
 Medium
 Topics
@@ -39,26 +40,49 @@ s consists of English letters, digits, symbols and spaces.
 */
 public class LongestSubStringWithoutRepeatingCharacter {
     public static void main(String[] args) {
-        String str = "pwwkew";
-        System.out.println(lengthOfLongestSubstring(str));
+//        String str = "pwwkew";
+        String str = "ohvhjdml";
+        System.out.println(new LongestSubStringWithoutRepeatingCharacter()
+                .lengthOfLongestSubstringUsingRecursion(str));
     }
-    public static int lengthOfLongestSubstring(String s) {
-//        Set<Character> charSet = new HashSet<>();
-//        int max=0,current=0;
-//        for(Character ch : s.toCharArray()){
-//            if(charSet.contains(ch)){
-//               charSet=new HashSet<>();
-//               if(current>max){
-//                   max=current;
-//               }
-//               current=1;
-//            }else{
-//                charSet.add(ch);
-//                current++;
-//            }
-//
-//        }
-//        return max>current?max:current;
+
+    public int lengthOfLongestSubstringUsingRecursion(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        if (s.length() == 1) {
+            return 1;
+        }
+        return findMaxLengthSubstring("", s, 0);
+
+    }
+
+    private int findMaxLengthSubstring(String p, String up, int maxLength) {
+        if (up.length() == 0) {
+            return Math.max(maxLength, p.length());
+        }
+
+        //current character
+        char currentChar = up.charAt(0);
+        int indexOfChar = p.indexOf(currentChar);
+
+        if (indexOfChar == -1) {
+            p = p + currentChar;
+            return findMaxLengthSubstring(p, up.substring(1), Math.max(maxLength, p.length()));
+        } else {
+            if (indexOfChar == 0) {
+                p = p.substring(1) + currentChar;
+            } else if (indexOfChar == p.length() - 1) {
+                p = "" + currentChar;
+            } else {
+                p = p.substring(indexOfChar + 1) + currentChar;
+            }
+            return findMaxLengthSubstring(p, up.substring(1), Math.max(maxLength, p.length()));
+        }
+
+    }
+
+    public int lengthOfLongestSubstring(String s) {
 
         int n = s.length();
         int maxLength = 0;
