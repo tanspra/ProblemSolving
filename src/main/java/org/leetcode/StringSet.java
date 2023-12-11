@@ -6,8 +6,9 @@ import java.util.List;
 public class StringSet {
     public static void main(String[] args) {
 
-        subSets("cbbd").forEach(System.out::println);
-        System.out.println(subSets("cbbd").stream().count());
+//        subSets("cbbd").forEach(System.out::println);
+//        System.out.println(subSets("cbbd").stream().count());
+        combinations("", "abc");
     }
 
     private static List<List<Character>> subSets(String str) {
@@ -43,24 +44,18 @@ public class StringSet {
     }//subSetsDuplicate
 
 
-//    static void combinations(String p, String up) {
-//        if (up.isEmpty()) {
-//            System.out.println(p);
-//            return;
-//        }
-//        char ch = up.charAt(0);
-//        //take character
-//        p=p+ch;
-//        up = up.substring(1);
-//        combinations(p,up);
-//        //ignore character
-//        combinations("",up);
-//
-////        for (int i = 0; i <= p.length(); i++) {
-////            String f = p.substring(0, i);
-////           // String s = p.substring(i, p.length());
-////            combinations(f +ch, up.substring(1));
-////        }
+    static void combinations(String p, String up) {
+        if (up.isEmpty()) {
+            System.out.println(p);
+            return;
+        }
+        char ch = up.charAt(0);
+        //take character
+        up = up.substring(1);
+        combinations(p + ch, up);
+        //ignore character
+        combinations(p, up);
+    }
 
 }//StringSet
 
