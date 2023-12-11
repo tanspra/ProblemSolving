@@ -6,7 +6,8 @@ import java.util.List;
 
 public class LongestPalindromicCombination {
     public static void main(String[] args) {
-        System.out.println(new LongestPalindromicCombination().longestPalindrome("babad"));
+        System.out.println(new LongestPalindromicCombination()
+                .longestPalindrome("aacabdkacaa"));
     }
 
     public String longestPalindrome(String s) {
