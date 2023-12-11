@@ -1,5 +1,7 @@
 package org.leetcode;
 
+import java.util.Arrays;
+
 /* https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 * 4. Median of Two Sorted Arrays
 Hard
@@ -34,7 +36,8 @@ nums2.length == n
 * */
 public class MedianOftwoSortedArray {
     public static void main(String[] args) {
-        System.out.println(new MedianOftwoSortedArray().findMedianSortedArrays(new int[]{1, 2}, new int[]{3, 4}));
+        System.out.println(new MedianOftwoSortedArray()
+                .findMedianSortedArrays(new int[]{1, 3}, new int[]{2, 4}));
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -45,10 +48,15 @@ public class MedianOftwoSortedArray {
 
         System.arraycopy(nums1, 0, mergedArray, 0, m);
         System.arraycopy(nums2, 0, mergedArray, m, n);
-        if ((m + n) % 2 != 0) {
-            median = mergedArray[(m + n + 1) / 2];
+        Arrays.sort(mergedArray);
+        int len = mergedArray.length;
+
+        if (len == 1) {
+            return mergedArray[0];
+        } else if (len % 2 != 0) {
+            median = mergedArray[(len) / 2];
         } else {
-            median = (mergedArray[(m + n) / 2 - 1] + mergedArray[(m + n) / 2]) / 2.0;
+            median = (mergedArray[len / 2] + mergedArray[(len / 2) - 1]) / 2.0;
         }
         return median;
     }
