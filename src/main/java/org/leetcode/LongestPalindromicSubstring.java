@@ -1,9 +1,5 @@
 package org.leetcode;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 /*https://leetcode.com/problems/longest-palindromic-substring/
 *
 * 5. Longest Palindromic Substring
@@ -37,30 +33,49 @@ s consist of only digits and English letters.
 * */
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
-        System.out.println(new LongestPalindromicSubstring().longestPalindrome("babad"));
+        System.out.println(new LongestPalindromicSubstring().longestPalindrome("thelviymgkeddreyviespjsyqwmbmnlwzjhdokfzrczvreiagayofwvhecskjqlqzodtozvzozqyiwfsjyrinrmgfyhplybonzuvmxxyihmggwiuccplqjtgschmieoexvtewbsjqzkzapfxpzhgjtbmlchevohmxnbattphvobptnhmcoihcaimchurqpucxapojgszpopdvsfahwidiyxlpjfhdkcoewzvlmaebudtovnvcuadykhhmwfpilqfdvnseiitokcbuxmhwukrdxwvtgztczrwcsydqwosnktronibiplbljrcpinqorbhxrwjonnqeniebrksjkcmbvjnuwdedoenqmrcxayqbzmlpbubnfnkkqnuljtchaeijcmfpyuxkgfssoqliqmhowtbmcvzkqbanxhowjjejexxlihwwhilxxejejjwohxnabqkzvcmbtwohmqilqossfgkxuypfmcjieahctjlunqkknfnbubplmzbqyaxcrmqneodedwunjvbmckjskrbeineqnnojwrxhbroqnipcrjlblpibinortknsowqdyscwrzctzgtvwxdrkuwhmxubckotiiesnvdfqlipfwmhhkydaucvnvotdubeamlvzweockdhfjplxyidiwhafsvdpopzsgjopaxcupqruhcmiachiocmhntpbovhpttabnxmhovehclmbtjghzpxfpazkzqjsbwetvxeoeimhcsgtjqlpccuiwggmhiyxxmvuznobylphyfgmrniryjsfwiyqzozvzotdozqlqjkscehvwfoyagaiervzcrzfkodhjzwlnmbmwqysjpseivyerddekgmyivleht"));
     }
 
     public String longestPalindrome(String s) {
-        List<String> list = new ArrayList<>();
-        list = combinations("", s, list);
-        return list.stream().filter(str -> isPalindrome(str)).max(Comparator.comparing(String::length)).get();
+        if (s.length() <= 1) {
+            return s;
+        }
+        int maxLength = 1;
+        String maxStr = s.substring(0, 1);
+        int len = s.length();
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + maxLength; j <= len; j++) {
+                if (j - i > maxLength && isPalindrome(s.substring(i, j))) {
+                    maxStr = s.substring(i, j);
+                    maxLength = j - i;
+                }
+            }
+
+        }
+        return maxStr;
     }
 
-    public List<String> combinations(String p, String up, List list) {
-        if (up.isEmpty()) {
-            list.add(p);
-            return list;
-        }
-        char ch = up.charAt(0);
-        //take character
-        up = up.substring(1);
-        combinations(p + ch, up, list);
-        //ignore character
-        combinations(p, up, list);
-        return list;
-    }
+//    public String longestPalindrome(String s) {
+//        List<String> palindromeList = new ArrayList<>();
+//        int start = 0;
+//        int len = s.length();
+//        while (start <(len)) {
+//            for (int end = start + 1; end < len+1; end++) {
+//                if (isPalindrome(s.substring(start, end))) {
+//                    palindromeList.add(s.substring(start, end));
+//
+//                }
+//            }
+//            start++;
+//        }
+//        Optional result = palindromeList.stream().max(Comparator.comparing(String::length));
+//        if (result.isPresent()) return (String) result.get();
+//        else return "";
+//    }
+
 
     private boolean isPalindrome(String str) {
+
         return str.contentEquals(new StringBuilder(str).reverse());
     }
 }//LongestPalindromicCombination
