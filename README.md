@@ -4,5 +4,5 @@
 
 String set program is in progress.
 
-To solve 
-5. Longest Palindromic substring
+To solve
+7 To solve
