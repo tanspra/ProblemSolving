@@ -32,6 +32,15 @@ Constraints:
 public class ReverseInteger {
     public static void main(String[] args) {
         System.out.println(new ReverseInteger().reverse(1534236469));
+       /* int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
+        int num = 964632435;
+        for (int i = 0; i < 11; i++) {
+            System.out.println("max-num :" + (max - num * i));
+            System.out.println("num : " + num * i);
+            System.out.println("min + num : " + (min + (max - num * i)));
+            System.out.println("**************************************************");
+        }*/
     }
 
     public int reverse(int x) {
