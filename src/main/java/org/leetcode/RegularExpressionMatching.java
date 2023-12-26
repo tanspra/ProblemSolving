@@ -1,5 +1,8 @@
 package org.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*https://leetcode.com/problems/regular-expression-matching/description/
 10. Regular Expression Matching
 Hard
@@ -44,10 +47,49 @@ public class RegularExpressionMatching {
         System.out.println(new RegularExpressionMatching().isMatch("aa", "a*"));
     }//main
 
+    private Map<String, Boolean> memo;
     public boolean isMatch(String s, String p) {
+        memo = new HashMap<>();
         return match(s, p, 0, 0);
     }//isMatch
 
+    //with memoziation
+    private boolean match(String s, String p, int i, int j) {
+        String key = i + "," + j;
+
+        if (memo.containsKey(key)) {
+            return memo.get(key);
+        }
+
+        if (i >= s.length() && j >= p.length()) {
+            memo.put(key, true);
+            return true;
+        }
+
+        if (j >= p.length()) {
+            memo.put(key, false);
+            return false;
+        }
+
+        boolean matched = i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.');
+
+        //star case
+        if ((j + 1) < p.length() && p.charAt(j + 1) == '*') {
+            boolean result = (match(s, p, i, j + 2) || (matched && match(s, p, i + 1, j)));
+            memo.put(key, result);
+            return result;
+        }
+
+        if (matched) {
+            boolean result = match(s, p, i + 1, j + 1);
+            memo.put(key, result);
+            return result;
+        }
+        memo.put(key, false);
+        return false;
+    }//match
+/*
+//    brute force approach
     private boolean match(String s, String p, int i, int j) {
 
         if (i >= s.length() && j >= p.length()) {
@@ -72,7 +114,7 @@ public class RegularExpressionMatching {
         return false;
 
 
-    }//match
+    }//match*/
     
     /*public boolean isMatch(String s, String p) {
 
