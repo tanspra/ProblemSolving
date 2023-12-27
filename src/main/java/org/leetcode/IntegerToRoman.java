@@ -53,7 +53,7 @@ public class IntegerToRoman {
     }//main
 
     public String intToRoman(int num) {
-        String[] thousands = {"", "M", "MM", "MMM", "DM"};
+        String[] thousands = {"", "M", "MM", "MMM"};
         String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
         String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] ones = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
@@ -67,6 +67,52 @@ public class IntegerToRoman {
         num -= (num / 10) * 10;
         res += ones[num];
         return res;
-
     }//intToRoman
 }//class
+
+
+/*leetcode 2ms solution
+class Solution {
+    public String intToRoman(int num) {
+
+        StringBuilder sb = new StringBuilder();
+
+        process(sb, '*', '*', 'M', num/1000);
+        num = num % 1000;
+
+        process(sb, 'M', 'D', 'C', num/100);
+        num = num % 100;
+
+        process(sb, 'C','L','X', num/10);
+        num = num % 10;
+
+        process(sb, 'X', 'V', 'I', num);
+
+        return sb.toString();
+    }
+
+
+    void process(StringBuilder sb, char major, char middle, char minor, int val){
+        if(val <= 3){
+            for(int i = 1; i<=val; i++)
+                sb.append(minor);
+        }
+        else if(val == 4){
+            sb.append(minor);
+            sb.append(middle);
+        }
+        else if(val == 5){
+            sb.append(middle);
+        }
+        else if(val <= 8){
+            sb.append(middle);
+            for(int i = 6; i<=val; i++)
+                sb.append(minor);
+        }
+        else if(val == 9){
+            sb.append(minor);
+            sb.append(major);
+        }
+    }
+}
+* */
