@@ -1,5 +1,6 @@
 package org.leetcode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /*https://leetcode.com/problems/two-sum/description/
@@ -44,7 +45,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 * */
 public class TwoSum {
     public static void main(String[] args) {
-
+        System.out.println(Arrays.toString(new TwoSum().twoSum(new int[]{1, 2, 34, 5}, 6)));
     }//main
 
     public int[] twoSum(int[] nums, int target) {
