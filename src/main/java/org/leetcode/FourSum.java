@@ -1,5 +1,6 @@
 package org.leetcode;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +37,10 @@ Constraints:
 * */
 public class FourSum {
     public static void main(String[] args) {
-        System.out.println(new FourSum().fourSum(new int[]{1000000000,1000000000,1000000000,1000000000}, -294967296));
+//        System.out.println(new FourSum().fourSum(new int[]{1000000000,1000000000,1000000000,1000000000}, -294967296));
+//        System.out.println(new FourSum().fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0));
+//        System.out.println(new FourSum().fourSum(new int[]{2,2,2,2,2}, 8));
+        System.out.println(new FourSum().fourSum(new int[]{-3,-2,-1,0,0,1,2,3}, 0));
     }
 
     public List<List<Integer>> fourSum(int[] nums, int target) {
@@ -44,23 +48,26 @@ public class FourSum {
         Arrays.sort(nums); // Sort the array to simplify the solution
         int n = nums.length;
         for (int i = 0; i < n; i++) {
-////remove duplicates
-//            if (i > 1 && nums[i] == nums[i - 1]) {
-//                continue; //avoid duplicate in quadruplets
-//            }
+            //remove duplicates
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue; //avoid duplicate in quadruplets
+            }
             for (int j = i + 1; j < n; j++) {
 
-//                //remove duplicates
-//                if (j > (i + 1) && nums[j] == nums[j - 1]) {
-//                    continue; //avoid duplicate in quadruplets
-//                }
-
+                //remove duplicates
+                if (j > (i + 1) && nums[j] == nums[j - 1]) {
+                    continue; //avoid duplicate in quadruplets
+                }
 
                 int left = j + 1;
                 int right = n - 1;
 
                 while (left < right) {
-                    int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                    long sum = nums[i];
+                    sum += nums[j];
+                    sum += nums[left];
+                    sum += nums[right];
+
 
                     if (sum == target) {
                         result.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
@@ -69,10 +76,9 @@ public class FourSum {
                         while (left < right && nums[left] == nums[left + 1]) {
                             left++;
                         }
-                        while (left < right && nums[right] == nums[right - 1]) {
+                        while (left < right && nums[right] == nums[right - 1 ]) {
                             right--;
                         }
-
                         left++;
                         right--;
                     } else if (sum < target) {
