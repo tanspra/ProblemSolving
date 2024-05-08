@@ -88,6 +88,6 @@ class ListNode {
 
     @Override
     public String toString() {
-        return val + " " + next;
+        return val + " "+next ;
     }
 }

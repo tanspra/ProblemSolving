@@ -4,7 +4,7 @@ package org.leetcode;
 public class SwapNodesInPairs {
     public static void main(String[] args) {
 //        System.out.println(new SwapNodesInPairs().swapPairs(new ListNode(1,new ListNode(2))));
-        System.out.println(new SwapNodesInPairs().swapPairs(new ListNode(1,new ListNode(2,
+        System.out.println(new SwapNodesInPairs().swapPairs2(new ListNode(1,new ListNode(2,
                 new ListNode(3)))));
     }
 
@@ -15,7 +15,7 @@ public class SwapNodesInPairs {
         ListNode next = head != null && head.next != null ? head.next : head;
         ListNode start = new ListNode(-1);
         start.next = head;
-        //start.next = head;
+
         while(start!=null && start.next != null && start.next.next != null) {
             ListNode swap1 = start.next;
             ListNode swap2 = start.next.next;
