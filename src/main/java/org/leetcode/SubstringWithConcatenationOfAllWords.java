@@ -12,6 +12,36 @@ public class SubstringWithConcatenationOfAllWords {
     }
 
     public List<Integer> findSubstring(String s, String[] words) {
+        List<Integer> ansList = new ArrayList<>();
+        int n = s.length();
+        int m = words.length;
+        int w= words[0].length();
+        HashMap<String, Integer> frequencyHashMap = new HashMap<>();
+        for(String word: words){
+            frequencyHashMap.put(word,frequencyHashMap.getOrDefault(word,0)+1);
+        }
+        for(int i=0; i<w; i++){
+            HashMap<String, Integer> tempHashMap = new HashMap<>();
+            int count = 0;
+            for (int j = i, k = i ; j+w <= n ; j = j+w) {
+                String word = s.substring(j,j+w);
+                tempHashMap.put(word,tempHashMap.getOrDefault(word,0)+1);
+                count++;
+                if(count == m){
+                    if(tempHashMap.equals(frequencyHashMap))
+                        ansList.add(k);
+                    String removeString = s.substring(k,k+w);
+                    tempHashMap.computeIfPresent(removeString,(a,b)->b>1 ? b-1 : null);
+                    count--;
+                    k = k+w;
+                }
+            }
+        }
+
+        return ansList;
+    }
+
+    public List<Integer> findSubstringMyApproach(String s, String[] words) {
     List<Integer> list = new ArrayList<>();
     Set<String> set = new HashSet<>();
     permute(Arrays.asList(words), 0, set);
