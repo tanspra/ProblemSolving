@@ -2,7 +2,7 @@ package org.leetcode;
 
 public class WildCardMatching {
     public static void main(String[] args) {
-        System.out.println(new WildCardMatching().isMatch("aa", "a"));
+        System.out.println(new WildCardMatching().isMatch("abcde", "*e"));
     }
 
     public boolean isMatch(String s, String p) {
