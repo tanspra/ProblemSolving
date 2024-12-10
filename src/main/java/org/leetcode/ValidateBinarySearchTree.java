@@ -23,7 +23,7 @@ public class ValidateBinarySearchTree {
         if ((min != null && root.val <= min) || (max != null && root.val >= max))
             return false;
 
-        //recursivey check for left subtree and right subtree
+        //recursively check for left subtree and right subtree
         return validateBST(root.left, min, root.val) && validateBST(root.right, root.val, max);
     }
 }
