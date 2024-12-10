@@ -1,5 +1,7 @@
 package org.leetcode;
 
+import org.utility.ListNode;
+
 /*https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 19. Remove Nth Node From End of List
 Medium
@@ -70,24 +72,3 @@ public class RemoveNthNodeFromEnd {
 
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    public ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        return val + " "+next ;
-    }
-}
