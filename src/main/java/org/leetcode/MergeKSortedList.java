@@ -1,5 +1,7 @@
 package org.leetcode;
 
+import org.utility.ListNode;
+
 import java.util.Arrays;
 
 /*https://leetcode.com/problems/merge-k-sorted-lists/description/

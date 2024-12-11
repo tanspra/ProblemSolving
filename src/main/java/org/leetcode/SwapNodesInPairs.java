@@ -1,5 +1,7 @@
 package org.leetcode;
 
+import org.utility.ListNode;
+
 //https://leetcode.com/problems/swap-nodes-in-pairs/description/
 public class SwapNodesInPairs {
     public static void main(String[] args) {
