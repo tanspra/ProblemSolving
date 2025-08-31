@@ -46,7 +46,7 @@ public class Palindrome {
 //    }
 
     public static boolean isPalindrome(int x) {
-        String number = new Integer(x).toString();
+        String number = Integer.toString(x);
         return number.equals(new StringBuilder(number).reverse().toString());
     }
 }
