@@ -1,7 +1,7 @@
 package org.dsa.leetcode.p2;
 
-import org.utility.GraphUtil;
-import org.utility.TreeNode;
+import org.dsa.util.GraphUtil;
+import org.dsa.util.TreeNode;
 
 public class FlattenBinaryTreeToLinkedList {
     public static void main(String[] args) {

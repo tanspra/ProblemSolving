@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p3;
 
-import org.utility.TreeNode;
+import org.dsa.util.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

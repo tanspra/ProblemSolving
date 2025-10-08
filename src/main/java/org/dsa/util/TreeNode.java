@@ -1,4 +1,4 @@
-package org.utility;
+package org.dsa.util;
 
 public class TreeNode {
     public int val;

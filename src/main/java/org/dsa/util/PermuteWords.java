@@ -1,4 +1,4 @@
-package org.utility;
+package org.dsa.util;
 
 import java.util.*;
 

@@ -31,7 +31,7 @@ It is guaranteed that the list represents a number that does not have leading ze
 */
 
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 public class AddTwoNumbers {
     public static void main(String[] args) {

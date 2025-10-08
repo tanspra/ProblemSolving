@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p2;
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {

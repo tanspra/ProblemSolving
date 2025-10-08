@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p3;
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 /*https://leetcode.com/problems/merge-two-sorted-lists/description/
 * 21. Merge Two Sorted Lists

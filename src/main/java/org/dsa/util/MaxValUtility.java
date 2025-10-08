@@ -1,4 +1,4 @@
-package org.utility;
+package org.dsa.util;
 
 public class MaxValUtility {
     public static void main(String[] args) {

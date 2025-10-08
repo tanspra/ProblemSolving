@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p4;
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 //https://leetcode.com/problems/swap-nodes-in-pairs/description/
 public class SwapNodesInPairs {

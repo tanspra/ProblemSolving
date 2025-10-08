@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p2;
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 //https://leetcode.com/problems/intersection-of-two-linked-lists/
 public class IntersectionOfTwoLinkedLists {

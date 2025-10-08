@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p3;
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 /*https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 19. Remove Nth Node From End of List

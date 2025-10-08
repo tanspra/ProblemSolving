@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p2;
 
-import org.utility.TreeNode;
+import org.dsa.util.TreeNode;
 
 public class MaximumDepthOfBinaryTree {
     public static void main(String[] args) {

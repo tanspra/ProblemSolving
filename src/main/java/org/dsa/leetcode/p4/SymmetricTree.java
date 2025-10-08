@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p4;
 
-import org.utility.TreeNode;
+import org.dsa.util.TreeNode;
 
 public class SymmetricTree {
     public static void main(String[] args) {

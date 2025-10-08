@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p3;
 
-import org.utility.ListNode;
+import org.dsa.util.ListNode;
 
 public class RemoveLinkedListElement {
     public ListNode removeElements(ListNode head, int val) {
