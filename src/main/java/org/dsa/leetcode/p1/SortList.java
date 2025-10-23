@@ -1,6 +1,6 @@
 package org.dsa.leetcode.p1;
 
-import com.leetcode.util.ListNode;
+import org.dsa.util.ListNode;
 
 public class SortList {
   

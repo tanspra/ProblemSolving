@@ -1,7 +1,7 @@
 package org.dsa.leetcode.p1;
 
-import com.leetcode.util.ListNode;
-import com.leetcode.util.ListNodeUtil;
+import org.dsa.util.ListNode;
+import org.dsa.util.ListNodeUtil;
 
 public class RemoveDuplicatesfromSortedList {
     public static void main(String[] args) {
