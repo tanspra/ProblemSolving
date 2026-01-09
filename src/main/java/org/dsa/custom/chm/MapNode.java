@@ -1,4 +1,4 @@
-package org.dsa.custom;
+package org.dsa.custom.chm;
 
 public class MapNode<K,V> {
     private K key;

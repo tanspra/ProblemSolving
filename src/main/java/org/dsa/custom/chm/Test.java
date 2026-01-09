@@ -1,4 +1,4 @@
-package org.dsa.custom;
+package org.dsa.custom.chm;
 
 public class Test {
     public static void main(String[] args) {
