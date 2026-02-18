@@ -10,10 +10,10 @@ public class DijkstraImpl {
                 {0, 0, 1, 7, 0}
         };
         System.out.println("Dijkstra's Algorithm");
-        dijkstra(graph, 5);
+        dijkstra(graph, 5, 1);
     }
 
-    private static void dijkstra(int[][] graph, int n) {
+    private static void dijkstra(int[][] graph, int n, int source) {
         boolean[] visited = new boolean[n];
         int[] distance = new int[n];
 
@@ -21,7 +21,7 @@ public class DijkstraImpl {
             visited[i] = false;
             distance[i] = Integer.MAX_VALUE;
         }
-        distance[2] = 0;
+        distance[source] = 0;
         for (int i = 0; i < n - 1; i++) {
             int minVertex = getMinVertex(visited, distance, n);
             visited[minVertex] = true;
