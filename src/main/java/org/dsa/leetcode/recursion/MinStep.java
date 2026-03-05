@@ -1,4 +1,4 @@
-package org.dsa.recursion;
+package org.dsa.leetcode.recursion;
 
 import java.util.Arrays;
 

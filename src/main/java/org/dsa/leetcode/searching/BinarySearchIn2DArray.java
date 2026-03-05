@@ -1,4 +1,4 @@
-package org.dsa.searching;
+package org.dsa.leetcode.searching;
 
 import java.util.Arrays;
 

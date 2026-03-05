@@ -1,4 +1,4 @@
-package org.dsa.searching;
+package org.dsa.leetcode.searching;
 
 public class NoOfEvenDigitNumberInArray {
     public static void main(String[] args) {

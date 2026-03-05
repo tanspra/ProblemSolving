@@ -1,4 +1,4 @@
-package org.dsa.recursion;
+package org.dsa.leetcode.recursion;
 
 public class KnapSack {
     public static void main(String[] args) {
