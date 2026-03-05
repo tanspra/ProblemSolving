@@ -7,7 +7,7 @@ public class Subsets {
   public static void main(String[] args) {
     int[] nums = {1, 2, 3};
     new Subsets().subsets(nums).stream().forEach(list -> {
-      list.stream().forEach(ele -> System.out.print(ele + ","));
+      list.stream().forEach(System.out::print);
       System.out.println();
     });
   }
