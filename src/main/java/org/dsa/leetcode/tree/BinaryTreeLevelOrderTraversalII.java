@@ -1,7 +1,5 @@
 package org.dsa.leetcode.tree;
 
-import org.dsa.util.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 

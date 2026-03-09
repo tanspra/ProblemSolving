@@ -1,7 +1,7 @@
 package org.dsa.leetcode.problem;
 
 
-import org.dsa.util.TreeNode;
+import org.dsa.leetcode.tree.TreeNode;
 
 public class ConvertSortedArraytoBinarySearchTree {
 

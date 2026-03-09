@@ -1,4 +1,4 @@
-package org.dsa.util;
+package org.dsa.leetcode.tree;
 
 public class TreeNode {
     public int val;

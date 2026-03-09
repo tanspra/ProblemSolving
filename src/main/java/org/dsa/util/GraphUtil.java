@@ -1,5 +1,7 @@
 package org.dsa.util;
 
+import org.dsa.leetcode.tree.TreeNode;
+
 public class GraphUtil {
 
     public static void printTree(TreeNode root) {

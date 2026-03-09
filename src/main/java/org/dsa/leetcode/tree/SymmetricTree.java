@@ -1,7 +1,5 @@
 package org.dsa.leetcode.tree;
 
-import org.dsa.util.TreeNode;
-
 public class SymmetricTree {
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(1);

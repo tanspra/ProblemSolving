@@ -1,6 +1,6 @@
 package org.dsa.leetcode.problem;
 
-import org.dsa.util.TreeNode;
+import org.dsa.leetcode.tree.TreeNode;
 
 public class BalancedBinaryTree {
     public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package org.dsa.leetcode.tree;
 
-import org.dsa.util.TreeNode;
-
 public class SumOfLeftLeafNode {
     public int sumOfLeftLeaves(TreeNode root) {
         int sum = 0;

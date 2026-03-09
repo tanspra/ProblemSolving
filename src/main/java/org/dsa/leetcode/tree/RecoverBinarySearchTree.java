@@ -1,7 +1,6 @@
 package org.dsa.leetcode.tree;
 
 import org.dsa.util.GraphUtil;
-import org.dsa.util.TreeNode;
 
 public class RecoverBinarySearchTree {
     public static void main(String[] args) {

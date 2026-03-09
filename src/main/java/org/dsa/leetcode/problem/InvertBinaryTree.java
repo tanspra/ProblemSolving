@@ -1,6 +1,6 @@
 package org.dsa.leetcode.problem;
 
-import org.dsa.util.TreeNode;
+import org.dsa.leetcode.tree.TreeNode;
 
 public class InvertBinaryTree {
     public TreeNode invertTree(TreeNode root) {
