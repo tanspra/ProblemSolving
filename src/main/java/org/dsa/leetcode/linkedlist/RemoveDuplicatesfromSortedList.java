@@ -10,7 +10,6 @@ public class RemoveDuplicatesfromSortedList {
         head = new RemoveDuplicatesfromSortedList().deleteDuplicates(head);
         ListNodeUtil.printList(head);
     }
-
     public ListNode deleteDuplicates(ListNode head) {
         //if head is null or head is single listNode
         if (head == null || head.next == null) {
