@@ -1,4 +1,4 @@
-package org.dsa.leetcode.problem;
+package org.dsa.leetcode.tree;
 
 import org.dsa.leetcode.tree.TreeNode;
 
