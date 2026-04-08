@@ -1,4 +1,4 @@
-package org.dsa.graph;
+package org.dsa.custom.graph;
 
 public class Edge {
     int source;

@@ -1,4 +1,4 @@
-package org.dsa.graph;
+package org.dsa.custom.graph;
 
 import java.util.ArrayList;
 import java.util.List;

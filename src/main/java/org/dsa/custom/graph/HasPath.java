@@ -1,4 +1,4 @@
-package org.dsa.graph;
+package org.dsa.custom.graph;
 
 public class HasPath {
     public static void main(String[] args) {
