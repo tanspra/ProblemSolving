@@ -1,4 +1,4 @@
-package org.dsa.custom.graph;
+package org.dsa.leetcode.graph;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package org.dsa.custom.graph;
+package org.dsa.leetcode.graph;
 
 public class HasPath {
     public static void main(String[] args) {
