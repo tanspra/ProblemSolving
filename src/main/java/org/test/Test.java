@@ -16,10 +16,16 @@ public class Test {
 //        stream.forEach((e)->{
 //            System.out.println(e +" -> "+ e.length());
 //        });
-        Stream<Integer> stream = Stream.of(4,2,8,6,10);
-        Stream<Integer> sorted = stream.sorted(Collections.reverseOrder());
-        List<Integer> collect = sorted.collect(Collectors.toList());
-        System.out.println(collect.get(1));
+//        Stream<Integer> stream = Stream.of(4,2,8,6,10);
+//        Stream<Integer> sorted = stream.sorted(Collections.reverseOrder());
+//        List<Integer> collect = sorted.collect(Collectors.toList());
+//        System.out.println(collect.get(1));
+        String str = "Hello";
+        Map<Character, Long> map  = str.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c,
+                        Collectors.counting()
+                ));
     }
 
     public static List<Integer> removeDuplicate(int[] arr) {
