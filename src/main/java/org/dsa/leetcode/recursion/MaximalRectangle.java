@@ -1,4 +1,4 @@
-package org.dsa.leetcode.dp;
+package org.dsa.leetcode.recursion;
 
 public class MaximalRectangle {
     public int maximalRectangle(char[][] matrix) {

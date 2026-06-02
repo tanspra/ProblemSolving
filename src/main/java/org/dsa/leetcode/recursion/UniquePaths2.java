@@ -1,4 +1,4 @@
-package org.dsa.leetcode.dp;
+package org.dsa.leetcode.recursion;
 
 public class UniquePaths2 {
   public static void main(String[] args) {

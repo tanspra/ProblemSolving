@@ -1,4 +1,4 @@
-package org.dsa.leetcode.dp;
+package org.dsa.leetcode.recursion;
 
 public class HouseRobber {
     public int rob(int[] nums) {
