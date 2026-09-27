@@ -2,6 +2,8 @@ package org.test;
 
 import org.test.model.Employee;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -10,7 +12,7 @@ public class StreamTest {
     public static void main(String[] args) {
         //Q1 Return employee names earning more than ₹1,00,000 sorted by salary descending.
 
-       /* List<Employee> employees = List.of(
+        List<Employee> employees = List.of(
                 new Employee(1L, "John", 120000, "IT"),
                 new Employee(2L, "Alice", 90000, "HR"),
                 new Employee(3L, "Bob", 150000, "IT"),
@@ -22,7 +24,7 @@ public class StreamTest {
                 .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
                 .map(employee -> employee.getName())
                 .toList();
-        System.out.println(Arrays.toString(result.toArray()));*/
+        System.out.println(Arrays.toString(result.toArray()));
 
         //Q2 Return the highest-paid employee in every department.
 
@@ -216,7 +218,7 @@ public class StreamTest {
                         )
                 ));*/
 
-        List<Employee> employees = List.of(
+     /*   List<Employee> employees = List.of(
                 new Employee(1, "John", 90000, "IT"),
                 new Employee(2, "Alice", 70000, "HR"),
                 new Employee(3, "Bob", 120000, "IT"),
@@ -227,7 +229,7 @@ public class StreamTest {
                 new Employee(8, "Jerry", 110000, "Finance"),
                 new Employee(9, "Mike", 105000, "Finance"),
                 new Employee(10, "Alex", 120000, "IT")
-        );
+        );*/
 
       /*  Return:
 
@@ -252,7 +254,7 @@ public class StreamTest {
 
         Return employee names sorted alphabetically.*/
 
-        Map<Boolean, Map<String, List<String>>> result = employees.stream()
+      /*  Map<Boolean, Map<String, List<String>>> result = employees.stream()
                 .collect(Collectors.partitioningBy(emp -> emp.getSalary() >= 100000,
                                 Collectors.groupingBy(Employee::getDepartment,
                                         Collectors.mapping(Employee::getName,
@@ -266,7 +268,7 @@ public class StreamTest {
 
                                 )
                         )
-                );
+                );*/
 
     }
 }
